@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title%}Form Page{%endblock%}
+<body>
+    {%block content%}
+    <h1>Let's play some Madlibs!</h1>
+    <form action="/results">
+        {% for prompt in userPrompts %}
+        <label for="{{prompt}}">{{prompt}}:</label>
+        <input type="text" name="{{prompt}}">
+        <br>
+        {% endfor %}
+        <button>submit</button>
+    </form>
+    {%endblock%}
+</body>
+</html>
